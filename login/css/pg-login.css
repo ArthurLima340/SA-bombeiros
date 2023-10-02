@@ -36,11 +36,22 @@ hr{
     justify-content: center;
 }
 #login{
+    border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: orange;
+    background: #ed7c3f7e;
     width: 25%;
+}
+a{
+    color: black;
+}
+.submit{
+    background-color: burlywood;
+    border: none;
+    border-radius: 5px;
+    width: 45px;
+    height: 20px;
 }
 img{
     width: 85px;
