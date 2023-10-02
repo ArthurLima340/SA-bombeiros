@@ -42,6 +42,13 @@ hr{
     justify-content: center;
     background: #ed7c3f7e;
     width: 25%;
+    height: 200px;
+    
+}
+img{
+    width: 85px;
+    position: fixed;
+    left: 46.5%;
 }
 a{
     color: black;
@@ -53,8 +60,18 @@ a{
     width: 45px;
     height: 20px;
 }
-img{
-    width: 85px;
-    position: fixed;
-    left: 46.5%;
+.card-header{
+    position: relative;
+    text-align: center;
 }
+.card-content-area{
+    margin-top: 5px;
+}
+.card-footer{
+    margin-top: 10px;
+}
+.card-content input{
+    border: 3px solid rgb(34, 34, 34);
+    border-radius: 7px;
+}
+
