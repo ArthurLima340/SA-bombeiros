@@ -1,0 +1,37 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+img{
+    width: 85px;
+    position: fixed;
+    left: 46.5%;
+}
+hr{
+    width: 100%;
+    height: 2%;
+    background-color: white;
+}
+header{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+}
+.titulo-conteiner{
+    width: 20%;
+    background-color: #ed7c3f7e;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.titulo{
+    color: white;
+    margin-left: 30px;
+}
