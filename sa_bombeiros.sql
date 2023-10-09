@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Out-2023 às 14:40
+-- Tempo de geração: 09-Out-2023 às 16:39
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 8.1.2
 
@@ -58,6 +58,32 @@ CREATE TABLE `localizacao_traumas` (
   `face` varchar(20) NOT NULL,
   `tipo` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `login`
+--
+
+CREATE TABLE `login` (
+  `nome_usuario` varchar(20) NOT NULL,
+  `senha` varchar(15) NOT NULL,
+  `cpf_usuario` varchar(11) NOT NULL,
+  `registro_abvesc` int NOT NULL,
+  `nome_completo_usuario` varchar(50) NOT NULL,
+  `n_unidade` int NOT NULL,
+  `unidade` varchar(50) NOT NULL,
+  `data_nasc` date NOT NULL,
+  `validade` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Extraindo dados da tabela `login`
+--
+
+INSERT INTO `login` (`nome_usuario`, `senha`, `cpf_usuario`, `registro_abvesc`, `nome_completo_usuario`, `n_unidade`, `unidade`, `data_nasc`, `validade`) VALUES
+('user_adm', 'sou.adm', '10065279905', 140001, 'Geovana da Silva Jochem', 14, 'Joinville', '2005-11-25', '2024-10-09'),
+('ana_ju', 'naju123', '13454347904', 160001, 'Ana Julia Briesemeister Xavier', 16, 'Joinville', '2006-06-16', '2024-10-09');
 
 -- --------------------------------------------------------
 
