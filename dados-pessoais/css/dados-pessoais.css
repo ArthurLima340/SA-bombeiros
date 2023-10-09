@@ -14,8 +14,8 @@ img{
     position: fixed;
     left: 46.5%;
 }
-hr{
-    width: 100%;
+.linha{
+    width: 500%;
     height: 2%;
     background-color: white;
 }
