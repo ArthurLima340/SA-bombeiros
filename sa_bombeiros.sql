@@ -32,7 +32,7 @@ CREATE TABLE `decisao_transporte` (
   `instavel` tinyint(1) NOT NULL,
   `potencialmente_instavel` tinyint(1) NOT NULL,
   `estavel` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -44,7 +44,7 @@ CREATE TABLE `forma_conducao` (
   `deitada` tinyint(1) NOT NULL,
   `sentada` tinyint(1) NOT NULL,
   `semi_sentada` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -57,7 +57,7 @@ CREATE TABLE `localizacao_traumas` (
   `lado` varchar(20) NOT NULL,
   `face` varchar(20) NOT NULL,
   `tipo` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,7 +75,7 @@ CREATE TABLE `login` (
   `unidade` varchar(50) NOT NULL,
   `data_nasc` date NOT NULL,
   `validade` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `login`
@@ -102,7 +102,7 @@ CREATE TABLE `problemas_encontrados` (
   `obstetrico_gestante` tinyint(1) NOT NULL,
   `obstetrico_hemorragia_excessiva` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -163,7 +163,7 @@ CREATE TABLE `sinais_sintomas` (
   `taquicardia` tinyint(1) NOT NULL,
   `tontura` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -194,7 +194,7 @@ CREATE TABLE `tipo_ocorrencia` (
   `trabalho` tinyint(1) NOT NULL,
   `transferencia` tinyint(1) NOT NULL,
   `outro` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -210,7 +210,7 @@ CREATE TABLE `transporte` (
   `samu` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL,
   `sem_remocao` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -229,7 +229,7 @@ CREATE TABLE `vitima_era` (
   `trauma` tinyint(1) NOT NULL,
   `passageiro_moto` tinyint(1) NOT NULL,
   `pedestre` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
