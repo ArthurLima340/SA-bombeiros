@@ -20,18 +20,20 @@
             <p>Bombeiros <br> Voluntários</p>
         </div>
         <div class="login">
-            <form action="/banco/login.php" class="card">
+            <form action="/banco/login.php" method="post" class="card">
                 <div class="card-header">
                     <h1>Login</h1>
                 </div>
                 <div class="card-content">
                     <div class="card-content-area">
                         <label for="usuario"><strong>Usuário</strong></label>
-                        <input type="text" id="usuario" autocomplete="off">
+                        <input type="name" id="nome_usuario" name="nome_usuario" size="38" maxlength="50"
+                        height="15" autocomplete="off" required>
                     </div>
                     <div class="card-content-area">
                         <label for="password"><strong>Senha</strong></label>
-                        <input type="password" id="password" autocomplete="off">
+                        <input type="password" id="senha" name="senha" size="38" maxlength="50"
+                        height="15" autocomplete="off" required>
                     </div>
                 </div>
                 <div class="card-footer">
