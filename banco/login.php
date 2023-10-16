@@ -17,7 +17,7 @@ session_start();
     if($resultado->num_rows === 1){
         //login foi efetuado com sucesso.
         $_SESSION['email'] = $email;
-        header("Location: \\SA-bombeiros/login/pg-login.html");
+        header("Location: /login/pg-login.html");
         exit();
     }else{
         echo "credenciais inválidas. Verifique seu email e senha";
