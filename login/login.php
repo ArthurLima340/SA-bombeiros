@@ -17,7 +17,7 @@ session_start();
     if($resultado->num_rows === 1){
         //login foi efetuado com sucesso.
         $_SESSION['nome_usuario'] = $nome_usuario;
-        header("Location: /login/pg-login.html");
+        header("Location: pg-login.html");
         exit();
     }else{
         echo "credenciais inválidas. Verifique seu nome_usuario e senha";
