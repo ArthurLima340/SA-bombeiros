@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 09-Out-2023 às 16:39
+-- Tempo de geração: 25-Out-2023 às 16:50
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 8.1.2
 
@@ -24,6 +24,87 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `anamnese_emergencia_medica`
+--
+
+CREATE TABLE `anamnese_emergencia_medica` (
+  `o_que_aconteceu` varchar(200) NOT NULL,
+  `aconteceu_outras_vezes` tinyint(1) NOT NULL,
+  `a_quanto_tempo_isto_aconteceu` varchar(10) NOT NULL,
+  `possui_algum_problema_saude` tinyint(1) NOT NULL,
+  `quais` varchar(100) NOT NULL,
+  `faz_uso_medicacao` tinyint(1) NOT NULL,
+  `hr_ultima_medicacao` time NOT NULL,
+  `quais_medicacoes` varchar(200) NOT NULL,
+  `alegico_a_algo` tinyint(1) NOT NULL,
+  `se_sim_especifique` varchar(100) NOT NULL,
+  `ingeriu_alimento_ou_liquido>=6hrs` tinyint(1) NOT NULL,
+  `que_hrs` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `anamnese_gestacional`
+--
+
+CREATE TABLE `anamnese_gestacional` (
+  `periodo_gestacao` varchar(10) NOT NULL,
+  `fez_pre-natal` tinyint(1) NOT NULL,
+  `nome_medico` varchar(50) NOT NULL,
+  `existe_possibilidade_complicacao` tinyint(1) NOT NULL,
+  `e_o_primeiro_filho` tinyint(1) NOT NULL,
+  `quantos` varchar(2) NOT NULL,
+  `que_hrs_iniciaram_contracoes` time NOT NULL,
+  `tempo_das_contracoes_duracao` varchar(2) NOT NULL,
+  `tempo_das_contracoes_intervalo` varchar(2) NOT NULL,
+  `sente_pressao_regiao_quadril_ou_vontade_de_evacuar` tinyint(1) NOT NULL,
+  `ja_houve_ruptura_bolsa` tinyint(1) NOT NULL,
+  `foi_feito_inspecao_visual` tinyint(1) NOT NULL,
+  `parto_realizado` tinyint(1) NOT NULL,
+  `hr_nascimento` time NOT NULL,
+  `sexo_bb` tinyint(1) NOT NULL,
+  `nome_bb` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `avaliacao_cinematica`
+--
+
+CREATE TABLE `avaliacao_cinematica` (
+  `disturbio_comportamento` tinyint(1) NOT NULL,
+  `encontrado_de_capacete` tinyint(1) NOT NULL,
+  `encontrado_de_cinto` tinyint(1) NOT NULL,
+  `para-brisas_avariado` tinyint(1) NOT NULL,
+  `caminhando_na_cena` tinyint(1) NOT NULL,
+  `painel_avariado` tinyint(1) NOT NULL,
+  `volante_torcido` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `dados_pessoais`
+--
+
+CREATE TABLE `dados_pessoais` (
+  `data_ocorrido` date NOT NULL,
+  `sexo` tinyint(1) NOT NULL,
+  `nome_hospital` varchar(50) NOT NULL,
+  `nome_vitima` varchar(50) NOT NULL,
+  `idade_vitima` varchar(3) NOT NULL,
+  `cpf_vitima` varchar(11) NOT NULL,
+  `telefone_vitima` varchar(13) NOT NULL,
+  `nome_acompanhante` varchar(50) NOT NULL,
+  `idade_acompanhante` varchar(3) NOT NULL,
+  `local_ocorrencia` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `decisao_transporte`
 --
 
@@ -37,6 +118,17 @@ CREATE TABLE `decisao_transporte` (
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `divulgar_p_imprenca`
+--
+
+CREATE TABLE `divulgar_p_imprenca` (
+  `sim` tinyint(1) NOT NULL,
+  `nao` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `forma_conducao`
 --
 
@@ -44,6 +136,22 @@ CREATE TABLE `forma_conducao` (
   `deitada` tinyint(1) NOT NULL,
   `sentada` tinyint(1) NOT NULL,
   `semi_sentada` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `informacao_ocorrencia`
+--
+
+CREATE TABLE `informacao_ocorrencia` (
+  `N_usb` int NOT NULL,
+  `n_ocorrencia` varchar(10) NOT NULL,
+  `desp` varchar(10) NOT NULL,
+  `h_ch` varchar(10) NOT NULL,
+  `km_final` varchar(10) NOT NULL,
+  `cod_ir` int NOT NULL,
+  `cod_ps` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -71,6 +179,7 @@ CREATE TABLE `login` (
   `cpf_usuario` varchar(11) NOT NULL,
   `registro_abvesc` int NOT NULL,
   `nome_completo_usuario` varchar(50) NOT NULL,
+  `funcao` varchar(50) NOT NULL,
   `n_unidade` int NOT NULL,
   `unidade` varchar(50) NOT NULL,
   `data_nasc` date NOT NULL,
@@ -81,9 +190,50 @@ CREATE TABLE `login` (
 -- Extraindo dados da tabela `login`
 --
 
-INSERT INTO `login` (`nome_usuario`, `senha`, `cpf_usuario`, `registro_abvesc`, `nome_completo_usuario`, `n_unidade`, `unidade`, `data_nasc`, `validade`) VALUES
-('user_adm', 'sou.adm', '10065279905', 140001, 'Geovana da Silva Jochem', 14, 'Joinville', '2005-11-25', '2024-10-09'),
-('ana_ju', 'naju123', '13454347904', 160001, 'Ana Julia Briesemeister Xavier', 16, 'Joinville', '2006-06-16', '2024-10-09');
+INSERT INTO `login` (`nome_usuario`, `senha`, `cpf_usuario`, `registro_abvesc`, `nome_completo_usuario`, `funcao`, `n_unidade`, `unidade`, `data_nasc`, `validade`) VALUES
+('user_adm', 'sou.adm', '10065279905', 140001, 'Geovana da Silva Jochem', '', 14, 'Joinville', '2005-11-25', '2024-10-09'),
+('ana_ju', 'naju123', '13454347904', 160001, 'Ana Julia Briesemeister Xavier', '', 16, 'Joinville', '2006-06-16', '2024-10-09');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `materiais_utilizados_deixado_hospital`
+--
+
+CREATE TABLE `materiais_utilizados_deixado_hospital` (
+  `base_estabiliza` varchar(2) NOT NULL,
+  `colar_n_pp_p` text NOT NULL,
+  `colar_m_g` varchar(2) NOT NULL,
+  `coxins_estabiliza` varchar(2) NOT NULL,
+  `ked` varchar(2) NOT NULL,
+  `maca_rigida` varchar(2) NOT NULL,
+  `t.t.f` varchar(2) NOT NULL,
+  `tirante_aranha` varchar(2) NOT NULL,
+  `tirante_cabeca` varchar(2) NOT NULL,
+  `canula` varchar(2) NOT NULL,
+  `outro` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `materiais_utilizados_descartavel`
+--
+
+CREATE TABLE `materiais_utilizados_descartavel` (
+  `ataduras` varchar(2) NOT NULL,
+  `cateter_tp.oculos` varchar(2) NOT NULL,
+  `compressa_comum` varchar(2) NOT NULL,
+  `kits` varchar(2) NOT NULL,
+  `luvas_desc` varchar(2) NOT NULL,
+  `mascara_desc` varchar(2) NOT NULL,
+  `manta_aluminizada` varchar(2) NOT NULL,
+  `pas_do_dea` varchar(2) NOT NULL,
+  `sonda_aspiracao` varchar(2) NOT NULL,
+  `soro_fisiologico` varchar(2) NOT NULL,
+  `talas_pap.` varchar(2) NOT NULL,
+  `outro` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -102,6 +252,69 @@ CREATE TABLE `problemas_encontrados` (
   `obstetrico_gestante` tinyint(1) NOT NULL,
   `obstetrico_hemorragia_excessiva` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `procedimentos_efetuados`
+--
+
+CREATE TABLE `procedimentos_efetuados` (
+  `aspiracao` tinyint(1) NOT NULL,
+  `avaliacao_inicial` tinyint(1) NOT NULL,
+  `avaliacao_dirigida` tinyint(1) NOT NULL,
+  `avaliacao_continuada` tinyint(1) NOT NULL,
+  `chave_rautek` tinyint(1) NOT NULL,
+  `canula_guedel` tinyint(1) NOT NULL,
+  `desobstrucao_v.a.` tinyint(1) NOT NULL,
+  `emprego_d.e.a.` tinyint(1) NOT NULL,
+  `gerenciamento_riscos` tinyint(1) NOT NULL,
+  `limpeza_ferimento` tinyint(1) NOT NULL,
+  `curativos` tinyint(1) NOT NULL,
+  `compressivo` tinyint(1) NOT NULL,
+  `encravamento` tinyint(1) NOT NULL,
+  `ocular` tinyint(1) NOT NULL,
+  `queimadura` tinyint(1) NOT NULL,
+  `simples` tinyint(1) NOT NULL,
+  `3_pontas` tinyint(1) NOT NULL,
+  `imobilizacoes` tinyint(1) NOT NULL,
+  `membro_inf.dir.` tinyint(1) NOT NULL,
+  `membro_inf.esq` tinyint(1) NOT NULL,
+  `membro_sup.dir` tinyint(1) NOT NULL,
+  `membro_sup.esq` tinyint(1) NOT NULL,
+  `quadril` tinyint(1) NOT NULL,
+  `cervical` tinyint(1) NOT NULL,
+  `maca_sobre_rodas` tinyint(1) NOT NULL,
+  `maca_rigida` tinyint(1) NOT NULL,
+  `ponte` tinyint(1) NOT NULL,
+  `retirado_capacete` tinyint(1) NOT NULL,
+  `r.c.p.` tinyint(1) NOT NULL,
+  `rolamento_90°` tinyint(1) NOT NULL,
+  `rolamento_180°` tinyint(1) NOT NULL,
+  `tomada_decisao` tinyint(1) NOT NULL,
+  `tratado_choque` tinyint(1) NOT NULL,
+  `uso_canula` tinyint(1) NOT NULL,
+  `uso_colar` tinyint(1) NOT NULL,
+  `uso_colar_tamanho` int NOT NULL,
+  `uso_ked` tinyint(1) NOT NULL,
+  `uso_ttf` tinyint(1) NOT NULL,
+  `ventilacao_suporte` tinyint(1) NOT NULL,
+  `oxigenioterapia` tinyint(1) NOT NULL,
+  `reanimador` tinyint(1) NOT NULL,
+  `meios_auxiliares` tinyint(1) NOT NULL,
+  `celesc` tinyint(1) NOT NULL,
+  `def.civil` tinyint(1) NOT NULL,
+  `igp/pc` tinyint(1) NOT NULL,
+  `policia_civil` tinyint(1) NOT NULL,
+  `policia_militar` tinyint(1) NOT NULL,
+  `policia_pre` tinyint(1) NOT NULL,
+  `policia_prf` tinyint(1) NOT NULL,
+  `samu` tinyint(1) NOT NULL,
+  `samu_usa` tinyint(1) NOT NULL,
+  `samu_usb` tinyint(1) NOT NULL,
+  `cit` tinyint(1) NOT NULL,
+  `outro` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
