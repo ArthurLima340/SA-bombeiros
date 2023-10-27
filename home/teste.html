@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .color-change-button {
+      background-color: blue; /* Cor inicial do botão */
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button class="color-change-button" id="myButton">Clique para Mudar a Cor</button>
+
+<script>
+  // Adicione um evento de clique ao botão
+  document.getElementById("myButton").addEventListener("click", function() {
+    // Mude a cor do botão para a cor desejada quando clicado
+    this.style.backgroundColor = "red"; // Por exemplo, muda para vermelho
+  });
+</script>
+
+</body>
+</html>
