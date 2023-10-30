@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Out-2023 às 16:50
+-- Tempo de geração: 30-Out-2023 às 14:22
 -- Versão do servidor: 8.0.21
 -- versão do PHP: 8.1.2
 
@@ -40,7 +40,7 @@ CREATE TABLE `anamnese_emergencia_medica` (
   `se_sim_especifique` varchar(100) NOT NULL,
   `ingeriu_alimento_ou_liquido>=6hrs` tinyint(1) NOT NULL,
   `que_hrs` time NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,7 @@ CREATE TABLE `anamnese_gestacional` (
   `hr_nascimento` time NOT NULL,
   `sexo_bb` tinyint(1) NOT NULL,
   `nome_bb` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -81,7 +81,7 @@ CREATE TABLE `avaliacao_cinematica` (
   `caminhando_na_cena` tinyint(1) NOT NULL,
   `painel_avariado` tinyint(1) NOT NULL,
   `volante_torcido` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -100,7 +100,7 @@ CREATE TABLE `dados_pessoais` (
   `nome_acompanhante` varchar(50) NOT NULL,
   `idade_acompanhante` varchar(3) NOT NULL,
   `local_ocorrencia` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -113,7 +113,7 @@ CREATE TABLE `decisao_transporte` (
   `instavel` tinyint(1) NOT NULL,
   `potencialmente_instavel` tinyint(1) NOT NULL,
   `estavel` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -124,7 +124,7 @@ CREATE TABLE `decisao_transporte` (
 CREATE TABLE `divulgar_p_imprenca` (
   `sim` tinyint(1) NOT NULL,
   `nao` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -136,7 +136,7 @@ CREATE TABLE `forma_conducao` (
   `deitada` tinyint(1) NOT NULL,
   `sentada` tinyint(1) NOT NULL,
   `semi_sentada` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -152,7 +152,7 @@ CREATE TABLE `informacao_ocorrencia` (
   `km_final` varchar(10) NOT NULL,
   `cod_ir` int NOT NULL,
   `cod_ps` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -165,7 +165,7 @@ CREATE TABLE `localizacao_traumas` (
   `lado` varchar(20) NOT NULL,
   `face` varchar(20) NOT NULL,
   `tipo` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -175,24 +175,16 @@ CREATE TABLE `localizacao_traumas` (
 
 CREATE TABLE `login` (
   `nome_usuario` varchar(20) NOT NULL,
-  `senha` varchar(15) NOT NULL,
-  `cpf_usuario` varchar(11) NOT NULL,
-  `registro_abvesc` int NOT NULL,
+  `senha` varchar(50) NOT NULL,
+  `registro_abvesc` varchar(6) NOT NULL,
   `nome_completo_usuario` varchar(50) NOT NULL,
   `funcao` varchar(50) NOT NULL,
-  `n_unidade` int NOT NULL,
   `unidade` varchar(50) NOT NULL,
-  `data_nasc` date NOT NULL,
-  `validade` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `login`
---
-
-INSERT INTO `login` (`nome_usuario`, `senha`, `cpf_usuario`, `registro_abvesc`, `nome_completo_usuario`, `funcao`, `n_unidade`, `unidade`, `data_nasc`, `validade`) VALUES
-('user_adm', 'sou.adm', '10065279905', 140001, 'Geovana da Silva Jochem', '', 14, 'Joinville', '2005-11-25', '2024-10-09'),
-('ana_ju', 'naju123', '13454347904', 160001, 'Ana Julia Briesemeister Xavier', '', 16, 'Joinville', '2006-06-16', '2024-10-09');
+  `n_unidade` varchar(3) NOT NULL,
+  `data_nasc` varchar(8) NOT NULL,
+  `cpf` varchar(11) NOT NULL,
+  `validade` varchar(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -212,7 +204,7 @@ CREATE TABLE `materiais_utilizados_deixado_hospital` (
   `tirante_cabeca` varchar(2) NOT NULL,
   `canula` varchar(2) NOT NULL,
   `outro` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -233,7 +225,7 @@ CREATE TABLE `materiais_utilizados_descartavel` (
   `soro_fisiologico` varchar(2) NOT NULL,
   `talas_pap.` varchar(2) NOT NULL,
   `outro` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -252,7 +244,7 @@ CREATE TABLE `problemas_encontrados` (
   `obstetrico_gestante` tinyint(1) NOT NULL,
   `obstetrico_hemorragia_excessiva` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -315,7 +307,7 @@ CREATE TABLE `procedimentos_efetuados` (
   `samu_usb` tinyint(1) NOT NULL,
   `cit` tinyint(1) NOT NULL,
   `outro` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -376,7 +368,7 @@ CREATE TABLE `sinais_sintomas` (
   `taquicardia` tinyint(1) NOT NULL,
   `tontura` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -407,7 +399,7 @@ CREATE TABLE `tipo_ocorrencia` (
   `trabalho` tinyint(1) NOT NULL,
   `transferencia` tinyint(1) NOT NULL,
   `outro` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -423,7 +415,7 @@ CREATE TABLE `transporte` (
   `samu` tinyint(1) NOT NULL,
   `outro` tinyint(1) NOT NULL,
   `sem_remocao` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -442,7 +434,7 @@ CREATE TABLE `vitima_era` (
   `trauma` tinyint(1) NOT NULL,
   `passageiro_moto` tinyint(1) NOT NULL,
   `pedestre` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
