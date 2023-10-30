@@ -13,14 +13,53 @@ body{
     overflow-x: hidden;
 }
 header{
-    background-color: #ed7c3fd5;
-    width: 100%;
-    height: 9%;
-    border-bottom: white solid 2px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    width: 100%;
+    height: 7%;
+    background-color: #A25A33;
+  }
+  
+  header a{
+    margin: auto;
+    display: block;
+    width: 20%;
+    height: 100%;
+    line-height: 40px;
+    font-size: 100%;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    border: none;
+    letter-spacing: 2px;
+    text-align: center;
+    position: relative;
+    transition: all .35s;
+  }
+  
+  header a span{
+    position: relative;
+    z-index: 2;
+  }
+  
+  header a:after{
+    position: absolute;
+    border-radius: 20px;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #ED7D3F;
+    transition: all .35s;
+  }
+  
+  header a:hover{
+    color: #fff;
+  }
+  
+  header a:hover:after{
+    width: 100%;
+  }
 .botoes{
     width: 50%;
     height: 100%;
@@ -45,22 +84,4 @@ header{
     gap: 10%;
     width: 100%;
     justify-content: center;
-}
-header .cabeçalho .ocorrencia{
-    background-color: #ed7c3fd5;
-    border: 0;
-    font-size: xx-large;
-    border-radius: 25px;
-}
-header .cabeçalho .mapa{
-    background-color: #ed7c3fd5;
-    border: 0;
-    font-size: xx-large;
-    border-radius: 25px;
-}
-header .cabeçalho .perfil{
-    background-color: #ed7c3fd5;
-    border: 0;
-    font-size: xx-large;
-    border-radius: 25px;
 }
