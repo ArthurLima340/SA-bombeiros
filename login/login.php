@@ -3,7 +3,7 @@ include 'conexao.php';
 
 session_start();
 //varifica o formulário da tela login
-// if($_SERVER["REQUEST_METHOD"]==='POST'){
+if($_SERVER["REQUEST_METHOD"]==='POST'){
     $nome_usuario = $_POST['nome_usuario'];
     $senha = $_POST['senha'];
 
@@ -21,6 +21,7 @@ session_start();
         exit();
     }else{
         echo "credenciais inválidas. Verifique seu nome_usuario e senha";
+}
 }
     $conexao->close();
 ?>

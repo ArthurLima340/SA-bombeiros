@@ -17,16 +17,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Erro na conexão com o banco de dados: " . $conn->connect_error);
     }
 
-    // // Consulta SQL para inserir os dados no banco de dados
-    // $sql = "INSERT INTO tabela (nome) VALUES ('$nome')";
+    // Consulta SQL para inserir os dados no banco de dados
+    $sql = "INSERT INTO tabela (nome) VALUES ('$nome')";
 
-    // if ($conn->query($sql) === TRUE) {
-    //     echo "Dados inseridos com sucesso.";
-    // } else {
-    //     echo "Erro ao inserir os dados: " . $conn->error;
-    // }
+    if ($conn->query($sql) === TRUE) {
+        echo "Dados inseridos com sucesso.";
+    } else {
+        echo "Erro ao inserir os dados: " . $conn->error;
+    }
 
-    // // Fecha a conexão com o banco de dados
-    // $conn->close();
+    // Fecha a conexão com o banco de dados
+    $conn->close();
 }
 ?>
