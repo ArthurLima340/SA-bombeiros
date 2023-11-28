@@ -1,6 +1,6 @@
 <?php
 // Conexão com o banco de dados
-include('conexao2.php');
+include('conexao.php');
 
 // Verifica a conexão
 if (isset($_POST['nome_usuario'], $_POST['senha'], $_POST['funcao'], $_POST['unidade'], $_POST['registro_abvesc'], $_POST['validade'], $_POST['cpf'], $_POST['data_nasc'])) {
