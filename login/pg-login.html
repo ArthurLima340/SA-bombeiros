@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="css/pg-login.css">
 </head>
 
-</body>
-</html>
 <body>
     <header>
         <div class="linha"></div>
@@ -22,14 +20,14 @@
             <p>Bombeiros <br> Voluntários</p>
         </div>
         <div class="container">
-            <form action="login.php" method="post" class="card">
+            <form action="login2.php" method="post" class="card">
                 <div class="card-header">
                     <h1>Login</h1>
                 </div>
                 <div class="card-content">
                     <div class="card-content-area">
                         <label for="usuario"><strong>Usuário</strong></label>
-                        <input type="name" id="nome_usuario" name="nome_usuario" size="38" maxlength="50"
+                        <input type="text" id="nome_usuario" name="nome_usuario" size="38" maxlength="50"
                         height="15" autocomplete="off" required>
                     </div>
                     <div class="card-content-area">
@@ -39,7 +37,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <input type="submit" value="login" class="submit">
+                    <button type="submit" name="button" class="btn login_btn"><strong>Login</strong></button>
                     <a href="#" class="recuperar_senha">Esqueceu a senha?</a>
                 </div>
             </form>
