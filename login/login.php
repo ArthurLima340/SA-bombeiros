@@ -1,5 +1,5 @@
 <?php
-        include('conexao2.php'); /*arquivo de conexão com o bando de dados*/
+        include('conexao.php'); /*arquivo de conexão com o bando de dados*/
 
         if(isset($_POST['button'])) {
             $nome_usuario = $_POST['nome_usuario'];
