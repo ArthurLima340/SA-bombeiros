@@ -16,27 +16,29 @@
     <div class="nome">
         <h1>Cadastro</h1>
     </div>
+    <form action="cadastro.php" method="post">
     <div class="all">
         <div class="quadrado">
             <div class="ado">
-                <input type="text" placeholder="Nome" class="um"> <br><br>
-                <input type="text" placeholder="Função" class="dois"> <br><br>
+                <input type="text" placeholder="Nome" name="nome_usuario" class="um"> <br><br>
+                <input type="text" placeholder="Função" name="funcao" class="dois"> <br><br>
                 <div class="tres">
-                    <input type="text" placeholder="N° unidade" class="quatro">
-                    <input type="text" placeholder="Unidade" class="cinco">
+                    <input type="password" id="senha" placeholder="Senha" name="senha" class="quatro" size="38" maxlength="50" height="15" autocomplete="off" required>
+                    <input type="text" placeholder="Unidade" name="unidade" class="cinco" >
                 </div> <br>
                 <div class="tres">
-                    <input type="text" placeholder="Reg.ABVESC.N°" class="sete">
-                    <input type="text" placeholder="Validade" class="oito">
+                    <input type="text" placeholder="Reg.ABVESC.N°" name="registro_abvesc" class="sete" >
+                    <input type="text" placeholder="Validade" name="validade" class="oito">
                 </div> <br>
                 <div class="tres">
-                    <input type="text" placeholder="CPF" class="dez">
-                    <input type="text" placeholder="Data de Nascimento" class="onze">
+                    <input type="text" placeholder="CPF" name="cpf" class="dez">
+                    <input type="text" placeholder="Data de Nascimento" name="data_nasc" class="onze">
                 </div> <br>
-                <button>Cadastrar!</button>
+                <button type="submit">Cadastrar!</button>
             </div>
         </div>
     </div>
+</form>
 </body>
 
 </html>
