@@ -49,7 +49,7 @@ header {
   width: 60%;
   height: 4%;
   background-color: #ed7c3f77;
-  border-top-right-radius: 20px ;
+  border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
@@ -63,10 +63,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+  direction: rtl;
 }
+
 form {
   width: 80%;
   border: 3px solid white;
   padding: 15px;
   border-radius: 20px;
+  text-align: left;
 }
