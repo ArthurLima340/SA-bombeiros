@@ -68,7 +68,7 @@
   .conteudo {
     width: 100%;
   }
-  
+
   form {
     width: 80%;
     border: 3px solid white;
@@ -83,7 +83,7 @@
     margin: 0 5px 0 10px;
   }
 
-  .btn-next button{
+  .btn-next button {
     background-color: #A25A33;
     font-size: 170%;
     color: white;
@@ -91,7 +91,8 @@
     border-radius: 20px;
     text-align: right;
   }
-  .btn-next{
+
+  .btn-next {
     width: 100%;
     text-align: right;
     margin-left: -5%;
