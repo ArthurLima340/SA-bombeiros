@@ -45,7 +45,7 @@ html {
   /* ------------------------------------------------------ */
   .titulo {
     font-size: 180%;
-    width: 90%;
+    width: 80%;
     height: 8%;
     background-color: #ed7c3f77;
     border-top-right-radius: 20px;
@@ -55,45 +55,39 @@ html {
   .titulo p {
     margin: 30px 0px 40px 10px;
   }
+.quad{
+    background-color: rgba(255, 68, 0, 0.466);
+    border-radius: 30px;
+    width: 50%;
+}
+.tabela{
+    height: auto;
+    width: 90%;
+    margin: 5%;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+.thead{
+    border-bottom: 1px solid white;
+    font-style: bold;
+}
+.um{
+    border-right: 1px solid white;
+}
+.borda{
+    border-bottom: 1px solid white;
+}
+.btn-next button {
+  background-color: #A25A33;
+  font-size: 170%;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  text-align: right;
+}
 
-  .conteudo {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* ------------------------------------------------------ */
-
-  .conteudo {
-    width: 100%;
-  }
-
-  form {
-    width: 80%;
-    border: 3px solid white;
-    padding: 15px;
-    border-radius: 20px;
-    text-align: left;
-    margin-bottom: 5%;
-  }
-
-  /* ------------------------------------------------------ */
-  form p {
-    margin: 0 5px 0 10px;
-  }
-
-  .btn-next button {
-    background-color: #A25A33;
-    font-size: 170%;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    text-align: right;
-  }
-
-  .btn-next {
-    width: 100%;
-    text-align: right;
-    margin-left: -5%;
-  }
+.btn-next {
+  width: 100%;
+  text-align: right;
+  margin-left: -5%;
+}
